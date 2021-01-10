@@ -1,12 +1,14 @@
-
 #include <bits/stdc++.h>
 #define rep(i,n) for(int i = 0; i < (n); ++i)
 using namespace std;
 using ll = long long;
 using P = pair<int,int>;
 
+ll mod = 1000000007;
 int main() {
-  ll x,k,d = 0;
-  cin >> x >> k >> d;
+  int n,w;
+  cin >> n >> w;
+  cout << n / w << endl;
   return 0;
 }
+

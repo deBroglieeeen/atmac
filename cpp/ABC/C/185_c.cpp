@@ -5,8 +5,9 @@ using namespace std;
 using ll = long long;
 using P = pair<int,int>;
 
+ll mod = 1000000007;
 int main() {
-  ll x,k,d = 0;
-  cin >> x >> k >> d;
+
   return 0;
 }
+

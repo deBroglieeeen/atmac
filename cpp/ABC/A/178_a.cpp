@@ -6,7 +6,9 @@ using ll = long long;
 using P = pair<int,int>;
 
 int main() {
-  ll x,k,d = 0;
-  cin >> x >> k >> d;
+  int x;
+  cin >> x;
+  if(x == 1) cout << 0 << endl;
+  else cout << 1 << endl;
   return 0;
 }
