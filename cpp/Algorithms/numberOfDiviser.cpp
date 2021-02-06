@@ -21,6 +21,15 @@ vector<int> getDivisorsBrute(int n) {
   return Divisors;
 }
 
+set<int> getSetDivBrute(int n) {
+  set<int> set {1};
+  rep(i, n + 1) {
+    if(i == 0) continue;
+    if(n % i == 0) set.insert(i);
+  }
+  return set;
+}
+
 int main(){
   vector<int> Div;
   int n;
@@ -37,5 +46,9 @@ int main(){
         if(i != 0 && i != n) return i;
       });
   filterNumbers.push_back(n);
-  rep(i,sizeof(filterNumbers)) cout << filterNumbers[i] << endl;
+  //rep(i,sizeof(filterNumbers)) cout << filterNumbers[i] << endl;
+  set<int> divSet;
+  divSet = getSetDivBrute(n);
+  //rep(i, sizeof(divSet)) cout << divSet[i] << endl;
+  for(auto num : divSet) cout << num << endl;
 }
