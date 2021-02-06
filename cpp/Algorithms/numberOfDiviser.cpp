@@ -11,8 +11,10 @@ vector<int> getDivisorsBrute(int n) {
     if(i == 0) continue;
     bool isChecked = false;
     rep(j,n) {
-      if(Divisors[j] == i) isChecked = true;
-      break;
+      if(Divisors[j] == i) {
+        isChecked = true;
+        break;
+      }
     }
     if(!isChecked && n % i == 0) Divisors.push_back(i);
   }
@@ -24,8 +26,16 @@ int main(){
   int n;
   cin >> n;
   Div = getDivisorsBrute(n);
-  rep(i,n) {
-    if(Div[i] == 0) Div.erase(Div.begin() + i);
-  }
-  rep(i,n) cout << Div[i] << endl;
+//  rep(i,n) {
+//    if(Div[i] == 0) Div.erase(Div.begin() + i);
+//  }
+  vector<int> filterNumbers;
+  copy_if(Div.begin(),Div.end(),
+      back_inserter(filterNumbers),
+     // [=](int i) {return i != 0 && i != n;});
+      [=](int i) {
+        if(i != 0 && i != n) return i;
+      });
+  filterNumbers.push_back(n);
+  rep(i,sizeof(filterNumbers)) cout << filterNumbers[i] << endl;
 }
